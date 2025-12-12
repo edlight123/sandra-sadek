@@ -16,6 +16,7 @@ export interface WorkItem {
   format: WorkFormat;
   url: string;
   imageUrl?: string;
+  award?: string;
 }
 
 export interface MultimediaItem {

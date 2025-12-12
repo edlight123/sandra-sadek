@@ -110,6 +110,7 @@ export const workItems: WorkItem[] = [
     topics: ['Housing', 'Inequality', 'Urban Development'],
     format: 'Feature',
     url: 'https://fortworthreport.org/2024/04/14/fort-worth-had-high-hopes-for-new-housing-model-tenants-say-it-fell-short/',
+    award: 'SPJ-Fort Worth First Amendment Award',
   },
   {
     id: 'w11',
@@ -143,6 +144,7 @@ export const workItems: WorkItem[] = [
     topics: ['Economy', 'Development', 'Policy'],
     format: 'Feature',
     url: 'https://fortworthreport.org/2023/09/05/experts-question-22-million-tax-break-to-move-luxury-car-dealership-to-clearfork-shopping-center/',
+    award: 'Texas Managing Editors First Place',
   },
   {
     id: 'w14',
