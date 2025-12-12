@@ -130,6 +130,7 @@ export default function WorkPage() {
           selectedOutlet={selectedOutlet}
           selectedFormat={selectedFormat}
           searchQuery={searchQuery}
+          filteredCount={filteredItems.length}
           onChangeRegion={setSelectedRegion}
           onChangeTopic={setSelectedTopic}
           onChangeOutlet={setSelectedOutlet}
@@ -137,11 +138,6 @@ export default function WorkPage() {
           onChangeSearch={setSearchQuery}
           onReset={handleReset}
         />
-
-        {/* Results Count */}
-        <div className="mb-6 text-neutral-600">
-          {filteredItems.length} {filteredItems.length === 1 ? "story" : "stories"}
-        </div>
 
         {/* No Results */}
         {filteredItems.length === 0 && (

@@ -16,6 +16,7 @@ interface WorkFilterBarProps {
   selectedOutlet: string;
   selectedFormat: string;
   searchQuery: string;
+  filteredCount: number;
   
   onChangeRegion: (value: string) => void;
   onChangeTopic: (value: string) => void;
@@ -35,6 +36,7 @@ export default function WorkFilterBar({
   selectedOutlet,
   selectedFormat,
   searchQuery,
+  filteredCount,
   onChangeRegion,
   onChangeTopic,
   onChangeOutlet,
@@ -46,23 +48,21 @@ export default function WorkFilterBar({
     selectedRegion || selectedTopic || selectedOutlet || selectedFormat || searchQuery;
 
   return (
-    <div className="bg-white border border-neutral-200 rounded-2xl p-4 md:p-5 mb-8 space-y-3">
+    <section className="rounded-2xl bg-white border border-neutral-200 p-4 md:p-5 shadow-sm mb-8">
+      {/* Top Row: Label and Count */}
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-sm font-medium text-neutral-700">Search & filter stories</h2>
+        <span className="text-xs text-neutral-500">{filteredCount} stories</span>
+      </div>
+
       {/* Search Input */}
-      <div>
+      <div className="mb-4">
         <label htmlFor="search" className="sr-only">
           Search stories
         </label>
         <div className="relative">
-          <input
-            id="search"
-            type="text"
-            placeholder="Search stories..."
-            value={searchQuery}
-            onChange={(e) => onChangeSearch(e.target.value)}
-            className="w-full px-4 py-2 pl-10 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors"
-          />
           <svg
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -74,21 +74,29 @@ export default function WorkFilterBar({
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
+          <input
+            id="search"
+            type="text"
+            placeholder="Search stories..."
+            value={searchQuery}
+            onChange={(e) => onChangeSearch(e.target.value)}
+            className="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2 pl-9 text-sm focus:ring-2 focus:ring-accent/40 focus:border-accent focus:bg-white transition-colors"
+          />
         </div>
       </div>
 
-      {/* Filters Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      {/* Filter Grid */}
+      <div className="grid gap-3 md:grid-cols-4 mb-3">
         {/* Region Filter */}
         <div>
-          <label htmlFor="region" className="sr-only">
-            Filter by region
+          <label htmlFor="region" className="block text-xs font-medium text-neutral-500 mb-1.5">
+            Region
           </label>
           <select
             id="region"
             value={selectedRegion}
             onChange={(e) => onChangeRegion(e.target.value)}
-            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors bg-white"
+            className="w-full h-9 rounded-lg border border-neutral-300 bg-white px-2 text-sm focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors"
           >
             <option value="">All Regions</option>
             {regions.map((region) => (
@@ -101,14 +109,14 @@ export default function WorkFilterBar({
 
         {/* Topic Filter */}
         <div>
-          <label htmlFor="topic" className="sr-only">
-            Filter by topic
+          <label htmlFor="topic" className="block text-xs font-medium text-neutral-500 mb-1.5">
+            Topic
           </label>
           <select
             id="topic"
             value={selectedTopic}
             onChange={(e) => onChangeTopic(e.target.value)}
-            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors bg-white"
+            className="w-full h-9 rounded-lg border border-neutral-300 bg-white px-2 text-sm focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors"
           >
             <option value="">All Topics</option>
             {topics.map((topic) => (
@@ -121,14 +129,14 @@ export default function WorkFilterBar({
 
         {/* Outlet Filter */}
         <div>
-          <label htmlFor="outlet" className="sr-only">
-            Filter by outlet
+          <label htmlFor="outlet" className="block text-xs font-medium text-neutral-500 mb-1.5">
+            Outlet
           </label>
           <select
             id="outlet"
             value={selectedOutlet}
             onChange={(e) => onChangeOutlet(e.target.value)}
-            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors bg-white"
+            className="w-full h-9 rounded-lg border border-neutral-300 bg-white px-2 text-sm focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors"
           >
             <option value="">All Outlets</option>
             {outlets.map((outlet) => (
@@ -141,14 +149,14 @@ export default function WorkFilterBar({
 
         {/* Format Filter */}
         <div>
-          <label htmlFor="format" className="sr-only">
-            Filter by format
+          <label htmlFor="format" className="block text-xs font-medium text-neutral-500 mb-1.5">
+            Format
           </label>
           <select
             id="format"
             value={selectedFormat}
             onChange={(e) => onChangeFormat(e.target.value)}
-            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors bg-white"
+            className="w-full h-9 rounded-lg border border-neutral-300 bg-white px-2 text-sm focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors"
           >
             <option value="">All Formats</option>
             {formats.map((format) => (
@@ -160,17 +168,17 @@ export default function WorkFilterBar({
         </div>
       </div>
 
-      {/* Reset Button */}
+      {/* Clear Filters Button */}
       {hasActiveFilters && (
-        <div className="pt-1">
+        <div className="flex justify-end">
           <button
             onClick={onReset}
-            className="px-4 py-2 text-sm font-medium text-accent border-2 border-accent bg-transparent hover:bg-accent/5 rounded-lg transition-colors"
+            className="inline-flex items-center rounded-full border border-accent/40 px-3 py-1 text-xs font-medium text-accent hover:bg-accent/5 transition-colors"
           >
             Clear filters
           </button>
         </div>
       )}
-    </div>
+    </section>
   );
 }
