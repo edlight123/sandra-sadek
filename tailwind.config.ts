@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accent: "#2563eb", // blue-600 as accent color
+        accent: "#1F3B57", // Deep ink blue for editorial look
         "off-white": "#fafafa",
       },
       fontFamily: {

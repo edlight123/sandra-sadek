@@ -103,21 +103,22 @@ export default function WorkPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#f8f7f5]">
       {/* Hero Section */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h1 className="font-serif font-bold text-4xl md:text-5xl mb-4">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 py-8">
+        <div className="bg-[#f3f1ec] rounded-2xl py-10 md:py-12 px-6 md:px-8">
+          <h1 className="font-serif font-bold text-4xl md:text-5xl mb-3 text-neutral-900">
             Reporting
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
+          <div className="w-8 h-0.5 bg-accent rounded-full mb-4"></div>
+          <p className="text-xl text-neutral-700 max-w-3xl">
             Text journalism spanning local housing to international geopolitics—from the US-Mexico border to the South Caucasus, covering community impact, policy, and culture.
           </p>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 pb-12">
         {/* Filter Panel */}
         <WorkFilterBar
           regions={regions}
@@ -138,13 +139,13 @@ export default function WorkPage() {
         />
 
         {/* Results Count */}
-        <div className="mb-6 text-gray-600">
+        <div className="mb-6 text-neutral-600">
           {filteredItems.length} {filteredItems.length === 1 ? "story" : "stories"}
         </div>
 
         {/* No Results */}
         {filteredItems.length === 0 && (
-          <div className="text-center py-20 bg-white border border-gray-200 rounded-lg">
+          <div className="text-center py-20 bg-white border border-neutral-200 rounded-2xl">
             <svg
               className="w-16 h-16 text-gray-300 mx-auto mb-4"
               fill="none"
@@ -158,15 +159,15 @@ export default function WorkPage() {
                 d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <h2 className="text-2xl font-serif font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl font-serif font-bold text-neutral-900 mb-2">
               No stories match these filters
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-neutral-600 mb-6">
               Try adjusting your search or filters to see more results
             </p>
             <button
               onClick={handleReset}
-              className="px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+              className="px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
             >
               Reset filters
             </button>

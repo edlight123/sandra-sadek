@@ -46,40 +46,41 @@ export default function WorkFilterBar({
     selectedRegion || selectedTopic || selectedOutlet || selectedFormat || searchQuery;
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
-      <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-        {/* Search Input */}
-        <div className="flex-1 min-w-[200px]">
-          <label htmlFor="search" className="sr-only">
-            Search stories
-          </label>
-          <div className="relative">
-            <input
-              id="search"
-              type="text"
-              placeholder="Search stories..."
-              value={searchQuery}
-              onChange={(e) => onChangeSearch(e.target.value)}
-              className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+    <div className="bg-white border border-neutral-200 rounded-2xl p-4 md:p-5 mb-8 space-y-3">
+      {/* Search Input */}
+      <div>
+        <label htmlFor="search" className="sr-only">
+          Search stories
+        </label>
+        <div className="relative">
+          <input
+            id="search"
+            type="text"
+            placeholder="Search stories..."
+            value={searchQuery}
+            onChange={(e) => onChangeSearch(e.target.value)}
+            className="w-full px-4 py-2 pl-10 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors"
+          />
+          <svg
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
-            <svg
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
+          </svg>
         </div>
+      </div>
 
+      {/* Filters Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {/* Region Filter */}
-        <div className="flex-1 min-w-[150px]">
+        <div>
           <label htmlFor="region" className="sr-only">
             Filter by region
           </label>
@@ -87,7 +88,7 @@ export default function WorkFilterBar({
             id="region"
             value={selectedRegion}
             onChange={(e) => onChangeRegion(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors bg-white"
+            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors bg-white"
           >
             <option value="">All Regions</option>
             {regions.map((region) => (
@@ -99,7 +100,7 @@ export default function WorkFilterBar({
         </div>
 
         {/* Topic Filter */}
-        <div className="flex-1 min-w-[150px]">
+        <div>
           <label htmlFor="topic" className="sr-only">
             Filter by topic
           </label>
@@ -107,7 +108,7 @@ export default function WorkFilterBar({
             id="topic"
             value={selectedTopic}
             onChange={(e) => onChangeTopic(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors bg-white"
+            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors bg-white"
           >
             <option value="">All Topics</option>
             {topics.map((topic) => (
@@ -119,7 +120,7 @@ export default function WorkFilterBar({
         </div>
 
         {/* Outlet Filter */}
-        <div className="flex-1 min-w-[150px]">
+        <div>
           <label htmlFor="outlet" className="sr-only">
             Filter by outlet
           </label>
@@ -127,7 +128,7 @@ export default function WorkFilterBar({
             id="outlet"
             value={selectedOutlet}
             onChange={(e) => onChangeOutlet(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors bg-white"
+            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors bg-white"
           >
             <option value="">All Outlets</option>
             {outlets.map((outlet) => (
@@ -139,7 +140,7 @@ export default function WorkFilterBar({
         </div>
 
         {/* Format Filter */}
-        <div className="flex-1 min-w-[150px]">
+        <div>
           <label htmlFor="format" className="sr-only">
             Filter by format
           </label>
@@ -147,7 +148,7 @@ export default function WorkFilterBar({
             id="format"
             value={selectedFormat}
             onChange={(e) => onChangeFormat(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors bg-white"
+            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors bg-white"
           >
             <option value="">All Formats</option>
             {formats.map((format) => (
@@ -157,17 +158,19 @@ export default function WorkFilterBar({
             ))}
           </select>
         </div>
+      </div>
 
-        {/* Reset Button */}
-        {hasActiveFilters && (
+      {/* Reset Button */}
+      {hasActiveFilters && (
+        <div className="pt-1">
           <button
             onClick={onReset}
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors whitespace-nowrap"
+            className="px-4 py-2 text-sm font-medium text-accent border-2 border-accent bg-transparent hover:bg-accent/5 rounded-lg transition-colors"
           >
-            Reset
+            Clear filters
           </button>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

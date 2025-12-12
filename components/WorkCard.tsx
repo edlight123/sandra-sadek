@@ -20,10 +20,10 @@ export default function WorkCard({ item }: WorkCardProps) {
   const hasAward = item.award && item.award.trim().length > 0;
 
   return (
-    <article className="group relative bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+    <article className="group relative bg-white border border-neutral-200 rounded-2xl overflow-hidden hover:border-accent hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
       {/* Thumbnail */}
       {item.imageUrl && (
-        <div className="aspect-video bg-gray-100 relative overflow-hidden">
+        <div className="aspect-video bg-neutral-100 relative overflow-hidden">
           <img
             src={item.imageUrl}
             alt=""
@@ -32,21 +32,16 @@ export default function WorkCard({ item }: WorkCardProps) {
         </div>
       )}
       
-      {/* Award Badge */}
-      {hasAward && (
-        <div className="absolute top-4 right-4 z-10">
-          <div className="flex items-center gap-1 px-3 py-1.5 bg-yellow-100 border border-yellow-300 rounded-full text-xs font-semibold text-yellow-800 shadow-sm">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-            Award
-          </div>
-        </div>
-      )}
-      
-      <div className="p-6">
+      <div className="p-4 md:p-5 flex flex-col justify-between flex-1">
+        {/* Award Badge - Inline */}
+        {hasAward && (
+          <span className="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent mb-2 self-start">
+            {item.award}
+          </span>
+        )}
+        
         {/* Meta Line: Format · Topic · Region */}
-        <div className="text-sm text-gray-500 mb-2">
+        <div className="text-sm text-neutral-500 mb-2">
           <span className="font-medium">{item.format}</span>
           {firstTopic && (
             <>
@@ -59,12 +54,12 @@ export default function WorkCard({ item }: WorkCardProps) {
         </div>
 
         {/* Title */}
-        <h3 className="font-serif font-bold text-xl mb-2 line-clamp-2 group-hover:text-accent transition-colors">
+        <h3 className="font-serif font-bold text-xl mb-2 line-clamp-2 text-neutral-900">
           <Link
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
+            className="hover:text-accent transition-colors"
           >
             {item.title}
           </Link>
@@ -72,12 +67,12 @@ export default function WorkCard({ item }: WorkCardProps) {
 
         {/* Dek */}
         {item.dek && (
-          <p className="text-gray-600 mb-4 line-clamp-2">{item.dek}</p>
+          <p className="text-neutral-700 mb-4 line-clamp-2">{item.dek}</p>
         )}
 
         {/* Footer: Outlet + Year | Read story */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-          <div className="text-sm text-gray-500">
+        <div className="flex items-center justify-between pt-4 mt-auto border-t border-neutral-100">
+          <div className="text-sm text-neutral-500">
             <span className="font-medium">{item.outlet}</span>
             <span className="mx-2">·</span>
             <span>{item.year}</span>
@@ -86,7 +81,7 @@ export default function WorkCard({ item }: WorkCardProps) {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-sm font-medium text-accent hover:underline"
+            className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
           >
             Read story
             <svg
