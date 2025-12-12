@@ -113,21 +113,24 @@ function WorkPageContent() {
         subtitle="Text journalism across regions and topics — from local housing to international geopolitics"
       />
 
-      <FilterBar
-        regions={regions}
-        topics={topics}
-        outlets={outlets}
-        formats={formats}
-        selectedRegion={selectedRegion}
-        selectedTopic={selectedTopic}
-        selectedOutlet={selectedOutlet}
-        selectedFormat={selectedFormat}
-        onRegionChange={setSelectedRegion}
-        onTopicChange={setSelectedTopic}
-        onOutletChange={setSelectedOutlet}
-        onFormatChange={setSelectedFormat}
-        onReset={handleReset}
-      />
+      {/* Only show filters if more than 20 items */}
+      {workItems.length > 20 && (
+        <FilterBar
+          regions={regions}
+          topics={topics}
+          outlets={outlets}
+          formats={formats}
+          selectedRegion={selectedRegion}
+          selectedTopic={selectedTopic}
+          selectedOutlet={selectedOutlet}
+          selectedFormat={selectedFormat}
+          onRegionChange={setSelectedRegion}
+          onTopicChange={setSelectedTopic}
+          onOutletChange={setSelectedOutlet}
+          onFormatChange={setSelectedFormat}
+          onReset={handleReset}
+        />
+      )}
 
       {/* Results Count */}
       <div className="mb-6 text-gray-600">

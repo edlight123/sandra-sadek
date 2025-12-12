@@ -81,25 +81,27 @@ export default function MultimediaPage() {
         </button>
       </div>
 
-      {/* Topic Filters */}
-      <div className="mb-8">
-        <div className="text-sm font-medium mb-3">Filter by topic:</div>
-        <div className="flex flex-wrap gap-2">
-          <TagPill
-            label="All Topics"
-            active={!selectedTopic}
-            onClick={() => setSelectedTopic("")}
-          />
-          {allTopics.map((topic) => (
+      {/* Topic Filters - Only show if more than 20 items */}
+      {multimediaItems.length > 20 && (
+        <div className="mb-8">
+          <div className="text-sm font-medium mb-3">Filter by topic:</div>
+          <div className="flex flex-wrap gap-2">
             <TagPill
-              key={topic}
-              label={topic}
-              active={selectedTopic === topic}
-              onClick={() => setSelectedTopic(topic)}
+              label="All Topics"
+              active={!selectedTopic}
+              onClick={() => setSelectedTopic("")}
             />
-          ))}
+            {allTopics.map((topic) => (
+              <TagPill
+                key={topic}
+                label={topic}
+                active={selectedTopic === topic}
+                onClick={() => setSelectedTopic(topic)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Results Count */}
       <div className="mb-6 text-gray-600">

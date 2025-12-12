@@ -28,25 +28,27 @@ export default function ResearchPage() {
         subtitle="Academic work on media, democracy, migration, and policy"
       />
 
-      {/* Tag Filters */}
-      <div className="mb-8">
-        <div className="text-sm font-medium mb-3">Filter by tag:</div>
-        <div className="flex flex-wrap gap-2">
-          <TagPill
-            label="All"
-            active={!selectedTag}
-            onClick={() => setSelectedTag("")}
-          />
-          {allTags.map((tag) => (
+      {/* Tag Filters - Only show if more than 20 items */}
+      {researchItems.length > 20 && (
+        <div className="mb-8">
+          <div className="text-sm font-medium mb-3">Filter by tag:</div>
+          <div className="flex flex-wrap gap-2">
             <TagPill
-              key={tag}
-              label={tag}
-              active={selectedTag === tag}
-              onClick={() => setSelectedTag(tag)}
+              label="All"
+              active={!selectedTag}
+              onClick={() => setSelectedTag("")}
             />
-          ))}
+            {allTags.map((tag) => (
+              <TagPill
+                key={tag}
+                label={tag}
+                active={selectedTag === tag}
+                onClick={() => setSelectedTag(tag)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Results Count */}
       <div className="mb-6 text-gray-600">
