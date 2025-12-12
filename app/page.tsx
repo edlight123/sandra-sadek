@@ -41,13 +41,41 @@ export default function HomePage() {
   ];
 
   const outlets = [
-    "Fort Worth Report",
-    "EVN Report",
-    "The Guardian",
-    "Foreign Policy",
-    "Texas Monthly",
-    "Al Jazeera English",
-    "Columbia Journalism Review",
+    { 
+      name: "Fort Worth Report", 
+      logo: "https://fortworthreport.org/wp-content/uploads/2020/07/cropped-FWR-site-icon-1-32x32.png",
+      url: "https://fortworthreport.org"
+    },
+    { 
+      name: "EVN Report", 
+      logo: "https://www.evnreport.com/favicon-32x32.png",
+      url: "https://www.evnreport.com"
+    },
+    { 
+      name: "The Guardian", 
+      logo: "https://assets.guim.co.uk/images/favicons/fee5e2638d1c85f17393a00d7e9ddd47/32x32.ico",
+      url: "https://www.theguardian.com"
+    },
+    { 
+      name: "Foreign Policy", 
+      logo: "https://foreignpolicy.com/wp-content/themes/foreign-policy-2017/assets/src/images/favicon.ico",
+      url: "https://foreignpolicy.com"
+    },
+    { 
+      name: "Texas Monthly", 
+      logo: "https://www.texasmonthly.com/wp-content/themes/tm-2022/images/favicons/favicon-32x32.png",
+      url: "https://www.texasmonthly.com"
+    },
+    { 
+      name: "Al Jazeera English", 
+      logo: "https://www.aljazeera.com/favicon.ico",
+      url: "https://www.aljazeera.com"
+    },
+    { 
+      name: "Columbia Journalism Review", 
+      logo: "https://www.cjr.org/favicon.ico",
+      url: "https://www.cjr.org"
+    }
   ];
 
   return (
@@ -171,71 +199,33 @@ export default function HomePage() {
       {/* Published In Strip */}
       <section className="py-12 border-y border-neutral-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-center text-sm uppercase tracking-wider text-neutral-500 mb-6">
+          <h3 className="text-center text-sm uppercase tracking-wider text-neutral-500 mb-8">
             Published In
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center items-center gap-8">
             {outlets.map((outlet) => (
-              <span
-                key={outlet}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-neutral-100 text-sm font-medium text-neutral-700"
+              <a
+                key={outlet.name}
+                href={outlet.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg border border-neutral-200 hover:border-accent hover:shadow-sm transition-all group"
+                title={outlet.name}
               >
-                {outlet}
-              </span>
+                <img
+                  src={outlet.logo}
+                  alt={`${outlet.name} logo`}
+                  className="w-6 h-6 object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <span className="text-sm font-medium text-neutral-700 group-hover:text-accent transition-colors">
+                  {outlet.name}
+                </span>
+              </a>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer Identity Card */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 md:p-8 text-center shadow-sm">
-            <h2 className="text-2xl font-serif font-bold mb-2 text-neutral-900">
-              Sandra Sadek
-            </h2>
-            <p className="text-neutral-600 mb-6">
-              Journalist • Researcher • Storyteller
-            </p>
-            
-            {/* Email */}
-            <div className="mb-6">
-              <a
-                href="mailto:sandrasadek1@gmail.com"
-                className="text-accent hover:underline font-medium"
-              >
-                sandrasadek1@gmail.com
-              </a>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex justify-center gap-6 mb-6">
-              <a
-                href="https://twitter.com/SandraSadek1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-600 hover:text-accent transition-colors"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/sandra-sadek-61152b174/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-600 hover:text-accent transition-colors"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
-            </div>
-
-            {/* Copyright */}
-            <p className="text-sm text-neutral-500">
-              © {new Date().getFullYear()} Sandra Sadek. All rights reserved.
-            </p>
           </div>
         </div>
       </section>
