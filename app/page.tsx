@@ -54,8 +54,18 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-off-white to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/borderlands-cover.jpg"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
             Sandra Sadek
           </h1>
@@ -75,6 +85,42 @@ export default function HomePage() {
             >
               Contact
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Images Section */}
+      <section className="py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/projects/borderlands/01.jpg"
+                alt="Border photography"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/projects/protest/02.jpg"
+                alt="Protest documentation"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/projects/borderlands/03.jpg"
+                alt="Community stories"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/projects/protest/04.jpg"
+                alt="Documentary work"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
           </div>
         </div>
       </section>
