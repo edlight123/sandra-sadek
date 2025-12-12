@@ -43,37 +43,37 @@ export default function HomePage() {
   const outlets = [
     { 
       name: "Fort Worth Report", 
-      logo: "https://fortworthreport.org/wp-content/uploads/2020/07/cropped-FWR-site-icon-1-32x32.png",
+      logo: "/images/logos/fort-worth-report.png",
       url: "https://fortworthreport.org"
     },
     { 
       name: "EVN Report", 
-      logo: "https://www.evnreport.com/favicon-32x32.png",
+      logo: "/images/logos/evn-report.png",
       url: "https://www.evnreport.com"
     },
     { 
       name: "The Guardian", 
-      logo: "https://assets.guim.co.uk/images/favicons/fee5e2638d1c85f17393a00d7e9ddd47/32x32.ico",
+      logo: "/images/logos/the-guardian.png",
       url: "https://www.theguardian.com"
     },
     { 
       name: "Foreign Policy", 
-      logo: "https://foreignpolicy.com/wp-content/themes/foreign-policy-2017/assets/src/images/favicon.ico",
+      logo: "/images/logos/foreign-policy.png",
       url: "https://foreignpolicy.com"
     },
     { 
       name: "Texas Monthly", 
-      logo: "https://www.texasmonthly.com/wp-content/themes/tm-2022/images/favicons/favicon-32x32.png",
+      logo: "/images/logos/texas-monthly.png",
       url: "https://www.texasmonthly.com"
     },
     { 
       name: "Al Jazeera English", 
-      logo: "https://www.aljazeera.com/favicon.ico",
+      logo: "/images/logos/aljazeera.png",
       url: "https://www.aljazeera.com"
     },
     { 
       name: "Columbia Journalism Review", 
-      logo: "https://www.cjr.org/favicon.ico",
+      logo: "/images/logos/cjr.png",
       url: "https://www.cjr.org"
     }
   ];
