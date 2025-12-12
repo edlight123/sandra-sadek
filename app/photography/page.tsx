@@ -20,7 +20,11 @@ export default function PhotographyPage() {
             <article className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300">
               {/* Cover Image */}
               <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 group-hover:scale-105 transition-transform duration-300" />
+                <img
+                  src={project.coverImageUrl}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
               {/* Content */}

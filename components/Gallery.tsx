@@ -20,8 +20,11 @@ export default function Gallery({ images }: GalleryProps) {
             className="relative aspect-[4/3] bg-gray-100 cursor-pointer overflow-hidden rounded-lg group"
             onClick={() => setSelectedImage(image)}
           >
-            {/* Placeholder for image */}
-            <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-400 group-hover:scale-105 transition-transform duration-300" />
+            <img
+              src={image.src}
+              alt={image.caption}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
             
             {/* Overlay on hover */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-end p-4">
@@ -48,8 +51,12 @@ export default function Gallery({ images }: GalleryProps) {
 
           <div className="max-w-6xl w-full">
             {/* Image */}
-            <div className="aspect-video bg-gray-800 mb-4 rounded-lg overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800" />
+            <div className="bg-gray-800 mb-4 rounded-lg overflow-hidden flex items-center justify-center">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.caption}
+                className="max-w-full max-h-[80vh] object-contain"
+              />
             </div>
 
             {/* Caption */}

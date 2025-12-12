@@ -11,8 +11,11 @@ export default function WorkCard({ item }: WorkCardProps) {
     <article className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
       {item.imageUrl && (
         <div className="aspect-video bg-gray-100 relative overflow-hidden">
-          {/* Placeholder for image - would use next/image in production */}
-          <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300" />
+          <img
+            src={item.imageUrl}
+            alt={item.title}
+            className="w-full h-full object-cover"
+          />
         </div>
       )}
       
