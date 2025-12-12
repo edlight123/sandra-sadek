@@ -2,7 +2,8 @@
 
 export type Region = 'US_LOCAL' | 'SOUTH_CAUCASUS' | 'US_MX_BORDER' | 'MIDDLE_EAST' | 'GLOBAL';
 export type WorkFormat = 'Feature' | 'Explainer' | 'Analysis' | 'Column';
-export type MultimediaType = 'Audio' | 'Video';
+export type MultimediaKind = 'audio' | 'video';
+export type MultimediaPlatform = 'YouTube' | 'SoundCloud' | 'Other';
 
 export interface WorkItem {
   id: string;
@@ -20,11 +21,10 @@ export interface WorkItem {
 export interface MultimediaItem {
   id: string;
   title: string;
-  type: MultimediaType;
-  platform: string;
+  kind: MultimediaKind;
+  platform: MultimediaPlatform;
   duration: string;
   description: string;
-  thumbnailUrl?: string;
   url: string;
   topics: string[];
   year: number;

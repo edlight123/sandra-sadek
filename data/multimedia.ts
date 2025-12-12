@@ -4,7 +4,7 @@ export const multimediaItems: MultimediaItem[] = [
   {
     id: 'm1',
     title: 'The Bronx Documentary Center: A Safe Space for Young Storytellers',
-    type: 'Video',
+    kind: 'video',
     platform: 'YouTube',
     duration: '3:45',
     description: 'The Bronx Documentary Center, located in the South Bronx in New York City, is a nonprofit that trains middle and high school students from the community in documentary work. For many of the attending students, the center has become a second home and even a safe space.',
@@ -15,7 +15,7 @@ export const multimediaItems: MultimediaItem[] = [
   {
     id: 'm2',
     title: 'Combating Senior Isolation in NYC',
-    type: 'Video',
+    kind: 'video',
     platform: 'YouTube',
     duration: '3:30',
     description: 'A city-based nonprofit is working to bridge the social gap. Nearly three out of four adults over 50 in the United States want to age in place. But for many, staying at home brings an unintended consequence: isolation. In New York City, a grassroots response is helping tackle this issue.',
@@ -26,7 +26,7 @@ export const multimediaItems: MultimediaItem[] = [
   {
     id: 'm3',
     title: 'Palestinian Artist Identity Through Music',
-    type: 'Video',
+    kind: 'video',
     platform: 'YouTube',
     duration: '4:15',
     description: 'Ghassan Sawalhi is a multifaceted artist. He raps. He sings. He produces music and he\'s a percussionist with a classical Arabic music band. How do all of these various art forms translate into his identity as a Palestinian artist?',
@@ -37,8 +37,8 @@ export const multimediaItems: MultimediaItem[] = [
   {
     id: 'm4',
     title: 'Russia\'s Election Interference Playbook',
-    type: 'Video',
-    platform: 'Social Media',
+    kind: 'video',
+    platform: 'Other',
     duration: '0:47',
     description: 'Will Russia interfere in Armenia\'s upcoming parliamentary elections? If so, what does that playbook look like? A 45 second explainer social video.',
     url: 'https://evnreport.com/politics/russias-election-interference-playbook/',
@@ -48,7 +48,7 @@ export const multimediaItems: MultimediaItem[] = [
   {
     id: 'm5',
     title: 'Fort Worth Housing Audio Report',
-    type: 'Audio',
+    kind: 'audio',
     platform: 'SoundCloud',
     duration: '5:30',
     description: 'Audio report on housing challenges in Fort Worth.',
@@ -59,7 +59,7 @@ export const multimediaItems: MultimediaItem[] = [
   {
     id: 'm6',
     title: 'Border Community Stories',
-    type: 'Audio',
+    kind: 'audio',
     platform: 'SoundCloud',
     duration: '6:15',
     description: 'Audio feature on communities at the US-Mexico border.',
@@ -70,7 +70,7 @@ export const multimediaItems: MultimediaItem[] = [
   {
     id: 'm7',
     title: 'Local News Audio Story',
-    type: 'Audio',
+    kind: 'audio',
     platform: 'SoundCloud',
     duration: '5:45',
     description: 'Audio reporting on local news and community issues.',
@@ -81,7 +81,7 @@ export const multimediaItems: MultimediaItem[] = [
   {
     id: 'm8',
     title: 'Community Impact Report',
-    type: 'Audio',
+    kind: 'audio',
     platform: 'SoundCloud',
     duration: '6:00',
     description: 'Audio investigation into community impact and policy.',
