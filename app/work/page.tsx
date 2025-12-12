@@ -105,7 +105,7 @@ export default function WorkPage() {
   return (
     <div className="min-h-screen bg-[#f8f7f5]">
       {/* Hero Section */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-[#f3f1ec] rounded-2xl py-10 md:py-12 px-6 md:px-8">
           <h1 className="font-serif font-bold text-4xl md:text-5xl mb-3 text-neutral-900">
             Reporting
@@ -118,7 +118,7 @@ export default function WorkPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {/* Filter Panel */}
         <WorkFilterBar
           regions={regions}
