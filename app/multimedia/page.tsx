@@ -13,6 +13,18 @@ export default function MultimediaPage() {
   );
   const [selectedTopic, setSelectedTopic] = useState<string>("");
 
+  // Helper to extract YouTube video ID
+  const getYouTubeId = (url: string) => {
+    const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/);
+    return match ? match[1] : null;
+  };
+
+  // Helper to extract Soundcloud track ID
+  const getSoundCloudTrackId = (url: string) => {
+    const match = url.match(/tracks\/(\d+)/);
+    return match ? match[1] : null;
+  };
+
   // Extract unique topics
   const allTopics = useMemo(() => {
     const topics = multimediaItems.flatMap((item) => item.topics);
@@ -102,10 +114,25 @@ export default function MultimediaPage() {
             key={item.id}
             className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
-            {/* Thumbnail */}
+            {/* Embedded Player */}
             <div className="aspect-video bg-gray-100 relative">
-              {item.thumbnailUrl ? (
-                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-400" />
+              {item.type === "Video" && getYouTubeId(item.url) ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${getYouTubeId(item.url)}`}
+                  title={item.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              ) : item.type === "Audio" && getSoundCloudTrackId(item.url) ? (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  scrolling="no"
+                  frameBorder="no"
+                  src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${getSoundCloudTrackId(item.url)}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`}
+                  title={item.title}
+                />
               ) : (
                 <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center">
                   {item.type === "Audio" ? (
@@ -129,7 +156,7 @@ export default function MultimediaPage() {
               )}
 
               {/* Type Badge */}
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 z-10">
                 <span
                   className={`px-3 py-1 rounded-full text-xs font-bold text-white ${
                     item.type === "Audio" ? "bg-purple-600" : "bg-red-600"
@@ -163,14 +190,14 @@ export default function MultimediaPage() {
                 ))}
               </div>
 
-              {/* Play/Watch Button */}
+              {/* View on Platform Link */}
               <Link
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-accent hover:underline font-medium"
+                className="inline-flex items-center text-accent hover:underline font-medium text-sm"
               >
-                {item.type === "Audio" ? "Listen" : "Watch"}
+                View on {item.platform}
                 <svg
                   className="w-4 h-4 ml-1"
                   fill="none"
@@ -181,13 +208,7 @@ export default function MultimediaPage() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                   />
                 </svg>
               </Link>
