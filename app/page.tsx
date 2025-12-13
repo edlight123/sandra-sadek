@@ -169,7 +169,7 @@ export default function HomePage() {
       </section>
 
       {/* Published In Strip */}
-      <section className="py-12 border-y border-neutral-200 bg-white">
+      <section className="py-12 border-t border-neutral-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-center text-sm uppercase tracking-wider text-neutral-500 mb-8">
             Published In
