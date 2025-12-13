@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { workItems } from "@/data/work";
 import WorkCard from "@/components/WorkCard";
 import TagPill from "@/components/TagPill";
@@ -81,9 +82,9 @@ export default function HomePage() {
   return (
     <div className="bg-[#f8f7f5]">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative py-10 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="grid gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] items-center">
             {/* Left: Text & CTAs */}
             <div>
               <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-neutral-900">
@@ -117,36 +118,57 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: 2×2 Image Collage */}
-            <div className="grid grid-cols-2 gap-3 rounded-2xl overflow-hidden">
-              <div className="aspect-square overflow-hidden rounded-lg">
-                <img
-                  src="/images/projects/borderlands/01.jpg"
-                  alt="Border photography"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            {/* Right: Portrait */}
+            <div className="flex justify-center md:justify-end">
+              <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                <Image
+                  src="/sandra-hero.jpg"
+                  alt="Portrait of Sandra Sadek"
+                  width={400}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                  priority
                 />
               </div>
-              <div className="aspect-square overflow-hidden rounded-lg">
-                <img
-                  src="/images/projects/protest/02.jpg"
-                  alt="Protest documentation"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="aspect-square overflow-hidden rounded-lg">
-                <img
-                  src="/images/projects/borderlands/03.jpg"
-                  alt="Community stories"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="aspect-square overflow-hidden rounded-lg">
-                <img
-                  src="/images/projects/protest/04.jpg"
-                  alt="Documentary work"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* On Assignment Section - 4-Photo Collage */}
+      <section className="py-12 bg-white">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <h2 className="text-2xl font-serif font-bold text-center mb-8 text-neutral-900">
+            On Assignment
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/projects/borderlands/01.jpg"
+                alt="Border photography"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/projects/protest/02.jpg"
+                alt="Protest documentation"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/projects/borderlands/03.jpg"
+                alt="Community stories"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/projects/protest/04.jpg"
+                alt="Documentary work"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
             </div>
           </div>
         </div>
