@@ -33,7 +33,7 @@ export default function ContactPage() {
               <div className="text-sm font-medium text-gray-500 mb-2">
                 Based in
               </div>
-              <div className="text-lg">Fort Worth, Texas</div>
+              <div className="text-lg">New York, NY</div>
             </div>
 
             {/* Availability */}
