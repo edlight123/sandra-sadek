@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { workItems } from "@/data/work";
 import WorkCard from "@/components/WorkCard";
 import TagPill from "@/components/TagPill";
@@ -82,94 +81,45 @@ export default function HomePage() {
   return (
     <div className="bg-[#f8f7f5]">
       {/* Hero Section */}
-      <section className="relative py-10 md:py-16">
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
-          <div className="grid gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] items-center">
-            {/* Left: Text & CTAs */}
-            <div>
-              <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-neutral-900">
-                Sandra Sadek
-              </h1>
-              <p className="text-xl md:text-2xl text-neutral-700 mb-8">
-                Journalist covering housing, migration, trade, and global politics
-              </p>
-
-              {/* Beats as Pills */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                {beats.map((beat) => (
-                  <TagPill key={beat} label={beat} />
-                ))}
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#selected-work"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
-                >
-                  View Selected Work
-                </a>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-accent text-accent rounded-lg font-medium hover:bg-accent/5 transition-colors"
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
-
-            {/* Right: Portrait */}
-            <div className="flex justify-center md:justify-end">
-              <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-                <Image
-                  src="/sandra-hero.jpg"
-                  alt="Portrait of Sandra Sadek"
-                  width={400}
-                  height={500}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/borderlands-cover.jpg"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-white/85" />
         </div>
-      </section>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+            Sandra Sadek
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-700 mb-8">
+            Journalist covering housing, migration, trade, and global politics
+          </p>
 
-      {/* On Assignment Section - 4-Photo Collage */}
-      <section className="py-12 bg-white">
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
-          <h2 className="text-2xl font-serif font-bold text-center mb-8 text-neutral-900">
-            On Assignment
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img
-                src="/images/projects/borderlands/01.jpg"
-                alt="Border photography"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img
-                src="/images/projects/protest/02.jpg"
-                alt="Protest documentation"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img
-                src="/images/projects/borderlands/03.jpg"
-                alt="Community stories"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img
-                src="/images/projects/protest/04.jpg"
-                alt="Documentary work"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+          {/* Beats as Pills */}
+          <div className="flex flex-wrap gap-2 mb-8 justify-center">
+            {beats.map((beat) => (
+              <TagPill key={beat} label={beat} />
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#selected-work"
+              className="px-8 py-3 bg-accent text-white rounded-md font-medium hover:bg-accent/90 transition-colors duration-200"
+            >
+              View Selected Work
+            </a>
+            <Link
+              href="/contact"
+              className="px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-md font-medium hover:bg-gray-900 hover:text-white transition-colors duration-200"
+            >
+              Contact
+            </Link>
           </div>
         </div>
       </section>
