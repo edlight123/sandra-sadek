@@ -59,7 +59,7 @@ export const workItems: WorkItem[] = [
     topics: ['Politics', 'Community', 'Campaign'],
     format: 'Feature',
     url: 'https://www.nycitynewsservice.com/2025/12/10/how-zohran-mamdanis-arabic-ad-ushered-a-new-era-of-inclusive-campaigning-for-the-city/',
-    imageUrl: '/images/projects/federal-plaza/cover.jpg',
+    imageUrl: '/images/work/mamdani.png',
   },
   {
     id: 'w6',
@@ -71,7 +71,7 @@ export const workItems: WorkItem[] = [
     topics: ['Trade', 'Economy', 'Labor'],
     format: 'Analysis',
     url: 'https://www.palabranahj.org/archive/tariffs-vs-robots-why-trumps-trade-war-cant-bring-back-the-jobs-of-the-past',
-    imageUrl: '/images/projects/borderlands/01.jpg',
+    imageUrl: '/images/work/tariffs-robots.jpeg',
   },
   {
     id: 'w7',
@@ -83,7 +83,7 @@ export const workItems: WorkItem[] = [
     topics: ['Trade', 'Agriculture', 'Border'],
     format: 'Feature',
     url: 'https://www.elpasotimes.com/story/news/2025/05/16/a-trade-war-with-mexico-screwworm-could-led-to-higher-beef-prices-el-paso-trump-cattle-industry/83494270007/',
-    imageUrl: '/images/projects/borderlands/02.jpg',
+    imageUrl: '/images/work/cattle-branding.jpg',
   },
   {
     id: 'w8',
@@ -95,7 +95,7 @@ export const workItems: WorkItem[] = [
     topics: ['Trade', 'Agriculture', 'Border'],
     format: 'Feature',
     url: 'https://www.theguardian.com/us-news/2025/may/06/trump-tariffs-cattle-ranchers-mexico',
-    imageUrl: '/images/projects/borderlands/03.jpg',
+    imageUrl: '/images/work/cattle-guardian.jpg',
   },
   {
     id: 'w9',
@@ -107,7 +107,7 @@ export const workItems: WorkItem[] = [
     topics: ['Housing', 'Inequality', 'Community'],
     format: 'Feature',
     url: 'https://www.keranews.org/news/2024-05-17/fort-worth-mobile-home-nightmares-eclipse-the-dream-of-homeownership-for-some',
-    imageUrl: '/images/projects/borderlands/04.jpg',
+    imageUrl: '/images/work/mobile-homes.jpg',
   },
   {
     id: 'w10',
