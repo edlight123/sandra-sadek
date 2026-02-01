@@ -1,78 +1,77 @@
 import PageHeader from "@/components/PageHeader";
 import Timeline from "@/components/Timeline";
 import { TimelineItem, Award } from "@/data/types";
-import Link from "next/link";
 
 export default function AboutPage() {
   const timelineItems: TimelineItem[] = [
     {
-      year: "2024",
-      title: "Senior Reporter, Fort Worth Report",
+      year: "2025",
+      title: "Freelance Journalist",
       description:
-        "Leading coverage of housing, economic development, and local government in North Texas.",
+        "Covered U.S.-Mexico border for Puente News Collaborative, analyzing the impact of Trump's tariffs on cattle trade. Published in The Guardian and Palabras NAHJ. Also covered UN events during the 79th General Assembly for Doha News.",
     },
     {
-      year: "2023",
-      title: "Freelance Correspondent, South Caucasus",
+      year: "2025",
+      title: "Intern, EVN Report",
       description:
-        "Reporting on democracy, geopolitics, and post-Soviet transitions for international outlets.",
+        "Wrote analytical articles on the evolving Armenian political landscape, including economic policies, international diplomacy, and regional changes. Explored the risk of Russian interference in upcoming 2026 elections.",
     },
     {
-      year: "2022",
-      title: "Reporting Fellow, US-Mexico Border",
+      year: "2022–2024",
+      title: "Reporter, Fort Worth Report (Report for America)",
       description:
-        "Documented migration, asylum policies, and cross-border communities for The Guardian and Texas Monthly.",
+        "Covered housing, transportation, infrastructure, and economic development. Stories included discrimination against housing voucher recipients, which led to a city ordinance amendment. Produced audio report for KERA News (NPR affiliate).",
     },
     {
-      year: "2021",
-      title: "Graduate Studies, Columbia University",
+      year: "2020–2021",
+      title: "Reporter, Community Impact Newspaper",
       description:
-        "Master's degree in Journalism with focus on international reporting and investigative techniques.",
+        "Covered local government and education in Grapevine and Southlake, including a controversial legal battle within the school district on diversity and equity.",
+    },
+    {
+      year: "2025",
+      title: "M.A. Journalism, CUNY Graduate School of Journalism",
+      description:
+        "Specialization in international reporting. Produced three short video features on the Bronx Documentary Center, a Palestinian artist in the diaspora, and combating senior isolation.",
     },
     {
       year: "2020",
-      title: "Local Reporter, Texas Tribune",
+      title: "B.A. Journalism, Texas State University",
       description:
-        "Covered state politics, education policy, and rural communities across Texas.",
-    },
-    {
-      year: "2018",
-      title: "Student Journalist, University of Texas",
-      description:
-        "Editor of The Daily Texan, covering campus and Austin city issues.",
+        "Minor in International Relations. Graduated Summa Cum Laude with honors. Authored thesis on 'War in Yemen: Costs and Benefits to the United States.'",
     },
   ];
 
   const awards: Award[] = [
     {
-      name: "Press Club of Fort Worth Award",
+      name: "SPJ-FW First Amendment Award",
+      year: 2025,
+      description: "Defending the Disadvantaged",
+    },
+    {
+      name: "SPJ-FW Finalist",
       year: 2024,
-      description: "Best Investigative Series for housing crisis coverage",
+      description: "Business Reporting",
     },
     {
-      name: "National Press Club Award",
-      year: 2023,
-      description: "Excellence in reporting on immigration",
-    },
-    {
-      name: "Fulbright Fellowship",
-      year: 2022,
-      description: "Research on post-Soviet democratic transitions",
-    },
-    {
-      name: "IRE Award Finalist",
-      year: 2023,
-      description: "Investigative Reporters and Editors recognition",
-    },
-    {
-      name: "NAHJ Award",
+      name: "Texas Managing Editors' Award",
       year: 2024,
-      description: "National Association of Hispanic Journalists, border reporting",
+      description: "First-place award for business reporting",
     },
     {
-      name: "Overseas Press Club Citation",
+      name: "Housing Narrative Lab Awards",
       year: 2023,
-      description: "Coverage of South Caucasus conflicts",
+      description: "Finalist",
+    },
+    {
+      name: "Columbia University Age Boom Academy",
+      year: 2023,
+      description: "Cohort exploring America's housing crisis and its impact on an aging population",
+    },
+    {
+      name: "Texas Press Association",
+      year: 2020,
+      description: "Part of the Katy Times team that placed 2nd for online coverage of summer 2020 Black Lives Matter protests in Katy",
     },
   ];
 
@@ -80,7 +79,7 @@ export default function AboutPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <PageHeader
         title="About"
-        subtitle="Journalist based in Texas, reporting on housing, migration, trade, and global politics"
+        subtitle="Journalist based in New York, reporting on global politics, migration and trade"
       />
 
       {/* Main Bio Section */}
@@ -98,20 +97,10 @@ export default function AboutPage() {
 
           <div className="space-y-4">
             <p className="text-lg leading-relaxed">
-              Sandra Sadek is an award-winning journalist covering housing,
-              migration, trade, and geopolitics. Her work focuses on how policy
-              decisions shape communities and individual lives.
+              Sandra Sadek is an award-winning, multimedia journalist based in New York City. Her work focuses on international issues, including geopolitics, migration, and trade, with a human-centered approach.
             </p>
             <p className="text-lg leading-relaxed">
-              She has reported from the US-Mexico border, the South Caucasus,
-              and cities across North America, with bylines in The Guardian,
-              Foreign Policy, Al Jazeera, and regional outlets including Fort
-              Worth Report and EVN Report.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Sandra holds a Master's degree in Journalism from Columbia
-              University and a BA in Government from the University of Texas at
-              Austin.
+              She is currently available for freelance assignments in NYC.
             </p>
           </div>
 
@@ -135,7 +124,7 @@ export default function AboutPage() {
             </div>
             <div>
               <div className="text-3xl font-serif font-bold text-accent">
-                TX
+                NYC
               </div>
               <div className="text-sm text-gray-600">Based in</div>
             </div>
@@ -172,52 +161,6 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Download CV/Resume */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 text-center">
-        <h3 className="text-xl font-serif font-bold mb-4">
-          Download Portfolio Materials
-        </h3>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/files/sandra-sadek-cv.pdf"
-            className="inline-flex items-center px-6 py-3 bg-accent text-white rounded-md font-medium hover:bg-blue-700 transition-colors duration-200"
-          >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            Download CV
-          </Link>
-          <Link
-            href="/files/sandra-sadek-resume.pdf"
-            className="inline-flex items-center px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-md font-medium hover:bg-gray-900 hover:text-white transition-colors duration-200"
-          >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            Download Resume
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }

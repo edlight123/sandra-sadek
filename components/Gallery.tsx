@@ -12,24 +12,28 @@ export default function Gallery({ images }: GalleryProps) {
 
   return (
     <>
-      {/* Gallery Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* Gallery Grid - Single column for chronological storytelling with captions under each image */}
+      <div className="space-y-8">
         {images.map((image, index) => (
           <div
             key={index}
-            className="relative aspect-[4/3] bg-gray-100 cursor-pointer overflow-hidden rounded-lg group"
-            onClick={() => setSelectedImage(image)}
+            className="max-w-4xl mx-auto"
           >
-            <img
-              src={image.src}
-              alt={image.caption}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            
-            {/* Overlay on hover */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-end p-4">
-              <p className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
-                {image.location}
+            <div
+              className="relative bg-gray-100 cursor-pointer overflow-hidden rounded-lg group"
+              onClick={() => setSelectedImage(image)}
+            >
+              <img
+                src={image.src}
+                alt={image.caption}
+                className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300"
+              />
+            </div>
+            {/* Caption directly under image */}
+            <div className="mt-3 px-1">
+              <p className="text-gray-700 text-base leading-relaxed">{image.caption}</p>
+              <p className="text-sm text-gray-500 mt-1">
+                {image.location} • {image.year}
               </p>
             </div>
           </div>

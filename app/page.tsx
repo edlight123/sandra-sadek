@@ -34,10 +34,8 @@ export default function HomePage() {
   const beats = [
     "International & Geopolitics",
     "Migration & Displacement",
-    "Housing & Development",
     "Trade & Economy",
     "Democracy & Governance",
-    "Local Journalism",
   ];
 
   const outlets = [
@@ -56,70 +54,56 @@ export default function HomePage() {
       logo: "/images/logos/the-guardian.png",
       url: "https://www.theguardian.com"
     },
-    { 
-      name: "Foreign Policy", 
-      logo: "/images/logos/foreign-policy.png",
-      url: "https://foreignpolicy.com"
-    },
-    { 
-      name: "Texas Monthly", 
-      logo: "/images/logos/texas-monthly.png",
-      url: "https://www.texasmonthly.com"
-    },
-    { 
-      name: "Al Jazeera English", 
-      logo: "/images/logos/aljazeera.png",
-      url: "https://www.aljazeera.com"
-    },
-    { 
-      name: "Columbia Journalism Review", 
-      logo: "/images/logos/cjr.png",
-      url: "https://www.cjr.org"
-    }
   ];
 
   return (
     <div className="bg-[#f8f7f5]">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/borderlands-cover.jpg"
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-white/85" />
-        </div>
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
-            Sandra Sadek
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-8">
-            Journalist covering housing, migration, trade, and global politics
-          </p>
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-white">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Portrait Image */}
+            <div className="order-2 lg:order-1 flex justify-center">
+              <div className="relative">
+                <img
+                  src="/images/sandra-portrait.jpg"
+                  alt="Sandra Sadek"
+                  className="w-80 h-auto rounded-lg shadow-lg object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Text Content */}
+            <div className="order-1 lg:order-2 text-center lg:text-left">
+              <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+                Sandra Sadek
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-700 mb-8">
+                Journalist covering migration, trade, and global politics
+              </p>
 
-          {/* Beats as Pills */}
-          <div className="flex flex-wrap gap-2 mb-8 justify-center">
-            {beats.map((beat) => (
-              <TagPill key={beat} label={beat} />
-            ))}
-          </div>
+              {/* Beats as Pills */}
+              <div className="flex flex-wrap gap-2 mb-8 justify-center lg:justify-start">
+                {beats.map((beat) => (
+                  <TagPill key={beat} label={beat} />
+                ))}
+              </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#selected-work"
-              className="px-8 py-3 bg-accent text-white rounded-md font-medium hover:bg-accent/90 transition-colors duration-200"
-            >
-              View Selected Work
-            </a>
-            <Link
-              href="/contact"
-              className="px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-md font-medium hover:bg-gray-900 hover:text-white transition-colors duration-200"
-            >
-              Contact
-            </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a
+                  href="#selected-work"
+                  className="px-8 py-3 bg-accent text-white rounded-md font-medium hover:bg-accent/90 transition-colors duration-200"
+                >
+                  View Selected Work
+                </a>
+                <Link
+                  href="/contact"
+                  className="px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-md font-medium hover:bg-gray-900 hover:text-white transition-colors duration-200"
+                >
+                  Contact
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

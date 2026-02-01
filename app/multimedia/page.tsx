@@ -27,9 +27,12 @@ export default function MultimediaPage() {
       {/* Video Section */}
       {videoItems.length > 0 && (
         <section className="mb-16">
-          <h2 className="font-serif font-bold text-3xl mb-6 border-b-2 border-accent pb-2">
-            Video Stories
+          <h2 className="font-serif font-bold text-3xl mb-4 border-b-2 border-accent pb-2">
+            Video
           </h2>
+          <p className="text-gray-600 mb-6">
+            Produced three short features at the Craig Newmark Graduate School of Journalism.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {videoItems.map((item) => (
               <MultimediaCard
@@ -50,9 +53,12 @@ export default function MultimediaPage() {
       {/* Audio Section */}
       {audioItems.length > 0 && (
         <section>
-          <h2 className="font-serif font-bold text-3xl mb-6 border-b-2 border-accent pb-2">
-            Audio Features
+          <h2 className="font-serif font-bold text-3xl mb-4 border-b-2 border-accent pb-2">
+            Audio
           </h2>
+          <p className="text-gray-600 mb-6">
+            During my time at the Fort Worth Report, I had the opportunity to produce audio spots and features for KERA News, the local North Texas NPR affiliate station. I've also co-hosted a 30-minute live segment for CUNY's Audio Files.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {audioItems.map((item) => (
               <MultimediaCard

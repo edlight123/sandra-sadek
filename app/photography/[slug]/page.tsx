@@ -123,19 +123,6 @@ export default function PhotoProjectPage({ params }: PhotoProjectPageProps) {
 
       {/* Gallery */}
       <Gallery images={project.images} />
-
-      {/* Individual Image Captions */}
-      <div className="mt-12 space-y-6">
-        <h2 className="text-2xl font-serif font-bold mb-6">Image Details</h2>
-        {project.images.map((image, index) => (
-          <div key={index} className="border-l-4 border-accent pl-4">
-            <div className="text-sm text-gray-500 mb-1">
-              Image {index + 1} • {image.location} • {image.year}
-            </div>
-            <p className="text-gray-700">{image.caption}</p>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
