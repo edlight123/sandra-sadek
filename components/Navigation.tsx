@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const links = [
     { href: "/", label: "Home" },
@@ -15,6 +17,11 @@ export default function Navigation() {
     { href: "/research", label: "Research" },
     { href: "/contact", label: "Contact" },
   ];
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
@@ -31,7 +38,11 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-accent transition-colors duration-200"
+                className={`transition-colors duration-200 ${
+                  isActive(link.href)
+                    ? "text-accent font-medium border-b-2 border-accent pb-0.5"
+                    : "text-gray-700 hover:text-accent"
+                }`}
               >
                 {link.label}
               </Link>
@@ -69,7 +80,11 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 text-gray-700 hover:text-accent transition-colors duration-200"
+                className={`block py-2 transition-colors duration-200 ${
+                  isActive(link.href)
+                    ? "text-accent font-medium"
+                    : "text-gray-700 hover:text-accent"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
