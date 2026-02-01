@@ -11,7 +11,7 @@ export const workItems: WorkItem[] = [
     topics: ['Conflict', 'Peace', 'Armenia'],
     format: 'Feature',
     url: 'https://evnreport.com/raw-unfiltered/the-war-before-the-peace/',
-    imageUrl: '/images/projects/syunik/cover.jpg',
+    imageUrl: '/images/work/The_War_Before_the_Peace_.jpg',
   },
   {
     id: 'w2',
@@ -23,7 +23,7 @@ export const workItems: WorkItem[] = [
     topics: ['Culture', 'Society', 'Photography'],
     format: 'Feature',
     url: 'https://evnreport.com/raw-unfiltered/portrait-of-a-nation/',
-    imageUrl: '/images/projects/syunik/01.jpg',
+    imageUrl: '/images/work/Portrait_of_a_Nation.jpg',
   },
   {
     id: 'w3',
@@ -35,7 +35,7 @@ export const workItems: WorkItem[] = [
     topics: ['Geopolitics', 'Europe', 'Strategy'],
     format: 'Analysis',
     url: 'https://evnreport.com/politics/europes-new-black-sea-strategy/',
-    imageUrl: '/images/projects/syunik/02.jpg',
+    imageUrl: '/images/work/Europes_New_Black_Sea_Strategy.jpg',
   },
   {
     id: 'w4',
@@ -47,7 +47,7 @@ export const workItems: WorkItem[] = [
     topics: ['Elections', 'Russia', 'Interference'],
     format: 'Feature',
     url: 'https://evnreport.com/politics/russias-election-interference-playbook/',
-    imageUrl: '/images/projects/syunik/03.jpg',
+    imageUrl: '/images/work/Russias_Election_Interference_Playbook_.jpg',
   },
   {
     id: 'w5',
@@ -120,7 +120,7 @@ export const workItems: WorkItem[] = [
     format: 'Feature',
     url: 'https://fortworthreport.org/2024/04/14/fort-worth-had-high-hopes-for-new-housing-model-tenants-say-it-fell-short/',
     award: 'SPJ-Fort Worth First Amendment Award',
-    imageUrl: '/images/projects/love-nyc/cover.jpg',
+    imageUrl: '/images/work/Fort Worth had high hopes for new housing model.webp',
   },
   {
     id: 'w11',
@@ -132,7 +132,7 @@ export const workItems: WorkItem[] = [
     topics: ['Housing', 'Policy', 'Inequality'],
     format: 'Feature',
     url: 'https://fortworthreport.org/2023/11/26/fort-worths-high-voucher-denial-rate-intensifies-as-rental-prices-rise/',
-    imageUrl: '/images/projects/love-nyc/01.jpg',
+    imageUrl: '/images/work/Fort Worth\'s high voucher denial rate intensifies.webp',
   },
   {
     id: 'w12',
@@ -144,7 +144,7 @@ export const workItems: WorkItem[] = [
     topics: ['Community', 'Rights', 'Conflict'],
     format: 'Feature',
     url: 'https://fortworthreport.org/2023/10/31/tarrant-county-residents-fear-retaliation-for-supporting-palestinians-why/',
-    imageUrl: '/images/projects/federal-plaza/01.jpg',
+    imageUrl: '/images/work/Tarrant County residents fear retaliation for.webp',
   },
   {
     id: 'w13',
@@ -157,7 +157,7 @@ export const workItems: WorkItem[] = [
     format: 'Feature',
     url: 'https://fortworthreport.org/2023/09/05/experts-question-22-million-tax-break-to-move-luxury-car-dealership-to-clearfork-shopping-center/',
     award: 'Texas Managing Editors First Place',
-    imageUrl: '/images/projects/love-nyc/02.jpg',
+    imageUrl: '/images/work/experts-question-22-million-tax-break-to-move-luxury-car-dealership-to-clearfork-shopping-center.webp',
   },
   {
     id: 'w14',
@@ -169,7 +169,7 @@ export const workItems: WorkItem[] = [
     topics: ['Transportation', 'Development', 'Sports'],
     format: 'Feature',
     url: 'https://fortworthreport.org/2023/08/27/regional-officials-consider-traffic-challenges-for-2026-world-cup-heres-what-we-know-so-far/',
-    imageUrl: '/images/projects/protest/01.jpg',
+    imageUrl: '/images/work/regional-officials-consider-traffic-challenges-for-2026-world-cup-heres-what-we-know-so-far.webp',
   },
   {
     id: 'w15',
@@ -181,7 +181,7 @@ export const workItems: WorkItem[] = [
     topics: ['Development', 'Urban Planning', 'Real Estate'],
     format: 'Feature',
     url: 'https://fortworthreport.org/2023/05/28/fort-worth-prepares-last-remaining-swaths-of-vacant-land-for-major-development/',
-    imageUrl: '/images/projects/protest/02.jpg',
+    imageUrl: '/images/work/fort-worth-prepares-last-remaining-swaths-of-vacant-land-for-major-development.webp',
   },
   {
     id: 'w16',
@@ -193,6 +193,6 @@ export const workItems: WorkItem[] = [
     topics: ['Migration', 'Ukraine', 'Community'],
     format: 'Feature',
     url: 'https://fortworthreport.org/2023/02/23/a-year-after-russian-invasion-resettled-ukrainian-family-dreams-of-peace-back-home/',
-    imageUrl: '/images/projects/protest/03.jpg',
+    imageUrl: '/images/work/a-year-after-russian-invasion-resettled-ukrainian-family-dreams-of-peace-back-home.webp',
   },
 ];
