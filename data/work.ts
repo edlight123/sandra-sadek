@@ -59,7 +59,7 @@ export const workItems: WorkItem[] = [
     topics: ['Politics', 'Community', 'Campaign'],
     format: 'Feature',
     url: 'https://www.nycitynewsservice.com/2025/12/10/how-zohran-mamdanis-arabic-ad-ushered-a-new-era-of-inclusive-campaigning-for-the-city/',
-    imageUrl: '/images/work/mamdani.png',
+    imageUrl: '/images/work/mamdani.jpg',
   },
   {
     id: 'w6',
