@@ -4,7 +4,7 @@ export const multimediaItems: MultimediaItem[] = [
   // VIDEO
   {
     id: 'm1',
-    title: 'The Bronx Documentary Center',
+    title: 'This center in The Bronx is building the next generation of journalists',
     kind: 'video',
     platform: 'YouTube',
     duration: '3:45',
@@ -15,7 +15,7 @@ export const multimediaItems: MultimediaItem[] = [
   },
   {
     id: 'm2',
-    title: 'Combating Senior Isolation in NYC',
+    title: 'The Companion: Loneliness Shadows Older New Yorkers Who Age in Place',
     kind: 'video',
     platform: 'YouTube',
     duration: '3:30',
@@ -26,7 +26,7 @@ export const multimediaItems: MultimediaItem[] = [
   },
   {
     id: 'm3',
-    title: 'Palestinian Artist Identity Through Music',
+    title: 'El Arkitekt | Ghassan Sawalhi, Palestinian artist in diaspora',
     kind: 'video',
     platform: 'YouTube',
     duration: '4:15',

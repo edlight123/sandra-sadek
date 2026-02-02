@@ -142,33 +142,26 @@ export default function ContactPage() {
         <h3 className="text-2xl font-serif font-bold mb-8 text-center">
           Areas of Expertise
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center">
-            <div className="text-accent text-4xl mb-3">🏘️</div>
-            <h4 className="font-semibold mb-2">Housing & Development</h4>
+            <div className="text-accent text-4xl mb-3">🌍</div>
+            <h4 className="font-semibold mb-2">Global Politics</h4>
             <p className="text-sm text-gray-600">
-              Affordable housing, gentrification, urban policy
+              Post-Soviet transitions, democracy, geopolitics
             </p>
           </div>
           <div className="text-center">
-            <div className="text-accent text-4xl mb-3">🌍</div>
-            <h4 className="font-semibold mb-2">Migration & Borders</h4>
+            <div className="text-accent text-4xl mb-3">🚶</div>
+            <h4 className="font-semibold mb-2">Migration</h4>
             <p className="text-sm text-gray-600">
               Asylum, immigration policy, cross-border communities
             </p>
           </div>
           <div className="text-center">
             <div className="text-accent text-4xl mb-3">📊</div>
-            <h4 className="font-semibold mb-2">Trade & Economy</h4>
+            <h4 className="font-semibold mb-2">Trade</h4>
             <p className="text-sm text-gray-600">
               Global commerce, supply chains, economic policy
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="text-accent text-4xl mb-3">🗳️</div>
-            <h4 className="font-semibold mb-2">Democracy & Geopolitics</h4>
-            <p className="text-sm text-gray-600">
-              Post-Soviet transitions, political movements, governance
             </p>
           </div>
         </div>

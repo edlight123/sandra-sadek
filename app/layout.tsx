@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Sandra Sadek - Journalist",
-  description: "Journalist covering housing, migration, trade, and global politics",
+  description: "Journalist based in New York, reporting on global politics, migration and trade",
 };
 
 export default function RootLayout({
