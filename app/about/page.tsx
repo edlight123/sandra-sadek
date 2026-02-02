@@ -89,7 +89,7 @@ export default function AboutPage() {
           {/* Portrait */}
           <div className="aspect-[3/4] rounded-lg mb-6 max-w-md overflow-hidden">
             <img
-              src="/images/sandra-portrait.jpg"
+              src="/images/sandra/reporting.jpg"
               alt="Sandra Sadek"
               className="w-full h-full object-cover"
             />
