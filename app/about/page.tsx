@@ -161,6 +161,45 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* In the Field */}
+      <div className="mb-20">
+        <h3 className="text-2xl font-serif font-bold mb-8">
+          In the Field
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="relative group overflow-hidden rounded-lg">
+            <img
+              src="/images/sandra/radio.jpg"
+              alt="Sandra in the radio studio"
+              className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p className="text-white text-sm font-medium">Radio Studio</p>
+            </div>
+          </div>
+          <div className="relative group overflow-hidden rounded-lg">
+            <img
+              src="/images/sandra/field.jpg"
+              alt="Sandra reporting in the field"
+              className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p className="text-white text-sm font-medium">In the Field</p>
+            </div>
+          </div>
+          <div className="relative group overflow-hidden rounded-lg">
+            <img
+              src="/images/sandra/reporting.jpg"
+              alt="Sandra on assignment"
+              className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p className="text-white text-sm font-medium">On Assignment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
