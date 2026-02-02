@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
 import TagPill from "./TagPill";
 import { MultimediaKind, MultimediaPlatform } from "@/data/types";
 
@@ -34,19 +38,44 @@ export default function MultimediaCard({
 }: MultimediaCardProps) {
   const youtubeId = platform === 'YouTube' ? getYouTubeId(url) : null;
   const soundcloudId = platform === 'SoundCloud' ? getSoundCloudTrackId(url) : null;
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <article className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       {/* Embedded Player */}
       <div className={kind === 'video' ? 'aspect-video bg-gray-100' : 'h-32 bg-gray-100'}>
         {platform === 'YouTube' && youtubeId ? (
-          <iframe
-            src={`https://www.youtube.com/embed/${youtubeId}?modestbranding=1&rel=0`}
-            title={title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full"
-          />
+          isPlaying ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${youtubeId}?modestbranding=1&rel=0&autoplay=1`}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          ) : (
+            <button
+              onClick={() => setIsPlaying(true)}
+              className="relative w-full h-full group cursor-pointer"
+              aria-label={`Play ${title}`}
+            >
+              <Image
+                src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
+                alt={title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              {/* Play button overlay */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                  <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            </button>
+          )
         ) : platform === 'SoundCloud' && soundcloudId ? (
           <iframe
             width="100%"
