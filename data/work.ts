@@ -132,7 +132,7 @@ export const workItems: WorkItem[] = [
     topics: ['Housing', 'Policy', 'Inequality'],
     format: 'Feature',
     url: 'https://fortworthreport.org/2023/11/26/fort-worths-high-voucher-denial-rate-intensifies-as-rental-prices-rise/',
-    imageUrl: '/images/work/Fort Worth\'s high voucher denial rate intensifies.webp',
+    imageUrl: '/images/work/fort-worth-voucher-denial.webp',
   },
   {
     id: 'w12',
