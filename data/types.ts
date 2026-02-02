@@ -3,7 +3,7 @@
 export type Region = 'US_LOCAL' | 'SOUTH_CAUCASUS' | 'US_MX_BORDER' | 'MIDDLE_EAST' | 'GLOBAL';
 export type WorkFormat = 'Feature' | 'Explainer' | 'Analysis' | 'Column';
 export type MultimediaKind = 'audio' | 'video';
-export type MultimediaPlatform = 'YouTube' | 'SoundCloud' | 'Other';
+export type MultimediaPlatform = 'YouTube' | 'SoundCloud' | 'Other' | 'None';
 
 export interface WorkItem {
   id: string;

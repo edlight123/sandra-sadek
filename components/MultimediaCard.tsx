@@ -21,10 +21,15 @@ const getYouTubeId = (url: string) => {
   return match ? match[1] : null;
 };
 
-// Helper to extract SoundCloud track ID
+// Helper to extract SoundCloud track ID from various URL formats
 const getSoundCloudTrackId = (url: string) => {
-  const match = url.match(/tracks\/(\d+)/);
-  return match ? match[1] : null;
+  // Match tracks/ID format
+  const tracksMatch = url.match(/tracks\/(\d+)/);
+  if (tracksMatch) return tracksMatch[1];
+  // Match api.soundcloud.com/tracks/ID format
+  const apiMatch = url.match(/api\.soundcloud\.com\/tracks\/(\d+)/);
+  if (apiMatch) return apiMatch[1];
+  return null;
 };
 
 export default function MultimediaCard({
@@ -82,9 +87,18 @@ export default function MultimediaCard({
             height="100%"
             scrolling="no"
             frameBorder="no"
-            src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudId}&color=%236366f1&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false`}
+            src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudId}&color=%23374151&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true`}
             title={title}
           />
+        ) : platform === 'None' || !url ? (
+          <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+            <div className="text-center text-white px-4">
+              <svg className="w-12 h-12 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <p className="text-sm opacity-75">Video not available online</p>
+            </div>
+          </div>
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center">
             <a
